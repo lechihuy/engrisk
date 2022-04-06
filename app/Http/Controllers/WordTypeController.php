@@ -13,9 +13,16 @@ class WordTypeController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        return inertia('WordTypes/Index');
+        $wordTypes = WordType::query();
+
+        $wordTypes->when($request->query('q'), fn($wordTypes, $q) => $wordTypes->whereFullText('name', $q)
+                                                                ->orWhere('abbreviation', 'like', "%$q%"));
+
+        $wordTypes = $wordTypes->get();
+
+        return inertia('WordTypes/Index', compact('wordTypes'));
     }
 
     /**

@@ -4,7 +4,7 @@ import CreateWordTypeForm from '@/Pages/WordTypes/Partials/CreateWordTypeForm.vu
 </script>
 
 <template>
-    <AppLayout title="Create Word type">
+    <AppLayout title="Create Word Type">
         <template #header>
             <h2 class="font-semibold text-xl text-gray-800 leading-tight">
                 Create Word Type
