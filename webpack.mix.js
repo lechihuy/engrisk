@@ -20,7 +20,7 @@ mix.js('resources/js/app.js', 'public/js').vue()
         '@': 'resources/js',
     });
 
-mix.browserSync('localhost:8000');
+// mix.browserSync('localhost:8000');
 
 if (mix.inProduction()) {
     mix.version();

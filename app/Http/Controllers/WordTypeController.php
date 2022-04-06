@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\WordType;
 use Illuminate\Http\Request;
+use App\Http\Requests\StoreWordTypeRequest;
 
 class WordTypeController extends Controller
 {
@@ -32,9 +34,11 @@ class WordTypeController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(StoreWordTypeRequest $request)
     {
-        //
+        WordType::create($request->validated());
+
+        return redirect()->route('word-types.index');
     }
 
     /**
