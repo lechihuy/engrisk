@@ -8,4 +8,11 @@ use Illuminate\Database\Eloquent\Model;
 class Dictionary extends Model
 {
     use HasFactory;
+
+    /**
+     * The table associated with the model.
+     *
+     * @var string
+     */
+    protected $table = 'dictionary';
 }

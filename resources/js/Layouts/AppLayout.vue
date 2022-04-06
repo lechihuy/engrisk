@@ -52,9 +52,13 @@ const logout = () => {
                                 <JetNavLink :href="route('dashboard')" :active="route().current('dashboard')">
                                     Dashboard
                                 </JetNavLink>
+
+                                <JetNavLink :href="route('word-types.index')" :active="route().current().includes('word-types')">
+                                    Word Types
+                                </JetNavLink>
                             </div>
                         </div>
-
+                        
                         <div class="hidden sm:flex sm:items-center sm:ml-6">
                             <div class="ml-3 relative">
                                 <!-- Teams Dropdown -->

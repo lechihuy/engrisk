@@ -15,9 +15,12 @@ return new class extends Migration
     {
         Schema::create('word_types', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
+            $table->string('name')->fullText();
             $table->string('abbreviation')->nullable();
             $table->timestamps();
+
+            $table->unique('name');
+            $table->unique('abbreviation');
         });
     }
 
